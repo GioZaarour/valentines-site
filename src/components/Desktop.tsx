@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { DesktopIcon } from './DesktopIcon'
 import { AppWindow } from './Window'
+import { TitleBar } from './TitleBar'
 import { Home } from '../pages/Home'
 import { PhotoGallery } from '../pages/PhotoGallery'
 import { TodoList } from '../pages/TodoList'
@@ -11,9 +12,23 @@ import { Letters } from '../pages/Letters'
 const DesktopContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #d4738a 0%, #f5c6d0 50%, #fef0e0 100%);
+  background: url('/background-image.png') center/cover no-repeat;
   position: relative;
   overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(245, 237, 224, 0.45);
+    backdrop-filter: blur(4px);
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 `
 
 const IconGrid = styled.div`
@@ -33,10 +48,10 @@ const IconGrid = styled.div`
 type PageKey = 'home' | 'photos' | 'todos' | 'letters'
 
 const icons: { label: string; icon: string; page: PageKey }[] = [
-  { label: 'Our Valentine', icon: 'heart', page: 'home' },
-  { label: 'Our Photos', icon: 'photos', page: 'photos' },
-  { label: 'Our Bucket List', icon: 'todo', page: 'todos' },
-  { label: 'Love Letters', icon: 'letters', page: 'letters' },
+  { label: 'Valentine', icon: 'heart', page: 'home' },
+  { label: 'Photo Gallery', icon: 'photos', page: 'photos' },
+  { label: 'Bucket List', icon: 'todo', page: 'todos' },
+  { label: 'Letters', icon: 'letters', page: 'letters' },
 ]
 
 const windowTitles: Record<PageKey, string> = {
@@ -72,6 +87,7 @@ export function Desktop() {
 
   return (
     <DesktopContainer>
+      <TitleBar />
       <IconGrid>
         {icons.map((item) => (
           <DesktopIcon

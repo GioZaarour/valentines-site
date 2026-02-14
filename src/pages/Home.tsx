@@ -22,15 +22,19 @@ const Content = styled.div`
   white-space: pre-line;
 `
 
-const poem = `Every moment spent with you
-is a moment I treasure.
-You are my heart, my soul,
-my endless, boundless pleasure.
-
-Through every season, hand in hand,
-we write our story true.
-Of all the wonders in this world,
-my favorite one is you.`
+const poem = `To see you chase your dreams inspires me
+I hope you get to see all that you try to reach
+You shouldn\’t shed a tear when my eyes could be
+Taking the place of yours when your mind is bleak
+I just want the best for you besides of me
+You warm me in DC despite the freeze
+My heart beats for you, you\’re tied to me
+God blessed us both when he led to you finding me
+Endless gratitude is not enough,
+Your love is endless like the universe that guided me
+To meet you in its unbounded improbability
+I wish you knew how knowing you feels to me
+But then again you do because I know your love for me`
 
 export function Home() {
   return (

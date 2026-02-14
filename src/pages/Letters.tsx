@@ -113,7 +113,7 @@ export function Letters() {
       {letters.map((letter) => (
         <LetterCard key={letter.id}>
           <LetterMeta>
-            From {letter.author} &middot; {formatDate(letter.createdAt.toDate())}
+            From {letter.author} &middot; {letter.createdAt ? formatDate(letter.createdAt.toDate()) : 'Just now'}
           </LetterMeta>
           <LetterContent>
             <ReactMarkdown>{letter.content}</ReactMarkdown>
